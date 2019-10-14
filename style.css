@@ -10,7 +10,7 @@ html, body{
     margin-top: 10px;
 }
 
-#camera, #camera--viewfront, #camera--viewback, #camera--sensor, #camera--output{
+#camera, #camera--viewfront, #camera--sensor, #camera--output{
     position: fixed;
     height: 100%;
     width: 100%;
@@ -29,10 +29,10 @@ html, body{
     filter: FlipH;
 }
 
-#camera--viewback, #camera--sensor, #camera--output{
+/* #camera--viewback, #camera--sensor, #camera--output{
     transform: scaleX(-1);
     filter: FlipH;
-}
+} */
 
 /* #camera--view--backcam{
     transform: scaleX(-1);
