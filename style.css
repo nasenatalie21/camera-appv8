@@ -10,7 +10,7 @@ html, body{
     margin-top: 10px;
 }
 
-#camera, #camera--view, #camera--sensor, #camera--output{
+#camera, #camera--viewfront, #camera--viewback, #camera--sensor, #camera--output{
     position: fixed;
     height: 100%;
     width: 100%;
