@@ -11,7 +11,7 @@ var track = null;
 
 // Define constants
 const cameraViewFront = document.querySelector("#camera--viewfront"),
-    cameraViewBack = document.querySelector("#camera--viewback")
+    cameraViewBack = document.querySelector("#camera--viewback"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
     cameraTrigger = document.querySelector("#camera--trigger"),
