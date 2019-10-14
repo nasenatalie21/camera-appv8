@@ -10,8 +10,8 @@ var track = null;
 
 
 // Define constants
-const cameraViewFront = document.querySelector("#camera--viewfront"),
-    cameraViewBack = document.querySelector("#camera--viewback"),
+const cameraView = document.querySelector("#camera--view"),
+    // cameraViewBack = document.querySelector("#camera--viewback"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
     cameraTrigger = document.querySelector("#camera--trigger"),
@@ -26,7 +26,7 @@ function cameraStart() {
         .getUserMedia(constraints)
         .then(function(stream) {
             track = stream.getTracks()[0];
-            cameraViewFront.srcObject = stream;
+            cameraView.srcObject = stream;
         })
         .catch(function(error) {
             console.error("Oops. Something is broken.", error);
@@ -39,7 +39,7 @@ function cameraStart2() {
         .getUserMedia(constraints2)
         .then(function(stream) {
             track = stream.getTracks()[0];
-            cameraViewBack.srcObject = stream;
+            cameraView.srcObject = stream;
         })
         .catch(function(error) {
             console.error("Oops. Something is broken.", error);
