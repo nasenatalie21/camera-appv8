@@ -10,7 +10,8 @@ var track = null;
 
 
 // Define constants
-const cameraView = document.querySelector("#camera--view"),
+const cameraViewFront = document.querySelector("#camera--viewfront"),
+    cameraViewBack = document.querySelector("#camera--viewback")
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
     cameraTrigger = document.querySelector("#camera--trigger"),
@@ -19,25 +20,26 @@ const cameraView = document.querySelector("#camera--view"),
     frontCam = document.querySelector("#camera--front"),
     backCam = document.querySelector("#camera--back");
 
-// Access the device camera and stream to cameraView
+// Access the device camera and stream to cameraView (Front Cam)
 function cameraStart() {
     navigator.mediaDevices
         .getUserMedia(constraints)
         .then(function(stream) {
             track = stream.getTracks()[0];
-            cameraView.srcObject = stream;
+            cameraViewFront.srcObject = stream;
         })
         .catch(function(error) {
             console.error("Oops. Something is broken.", error);
         });
 }
 
+// Access the device camera and stream to cameraView (Back Cam)
 function cameraStart2() {
     navigator.mediaDevices
         .getUserMedia(constraints2)
         .then(function(stream) {
             track = stream.getTracks()[0];
-            cameraView.srcObject = stream;
+            cameraViewBack.srcObject = stream;
         })
         .catch(function(error) {
             console.error("Oops. Something is broken.", error);
@@ -54,7 +56,6 @@ backCam.onclick = function() {
     cameraStart2();
 }
 
-
 // Take a picture when cameraTrigger is tapped
 cameraTrigger.onclick = function() {
     cameraSensor.width = cameraView.videoWidth;
@@ -64,20 +65,6 @@ cameraTrigger.onclick = function() {
     cameraOutput.classList.add("taken");
     // track.stop();
 };
-
-// Switch Camera to back/front camera
-// cameraSwitch.addEventListener('click', function(){
-//    if(stream == null) return
-//    stream.getTracks().array.forEach(t => {
-//        t.stop();
-//    });
-//    shouldFaceUser = !shouldFaceUser;
-   
-// });
-
-// cameraSwitch.onclick = function(){
-//     front = !front; 
-// };
 
 // Save the image to local gallery
 saveImage.onclick = function() {

@@ -17,12 +17,19 @@ html, body{
     object-fit: cover;
 }
 
-#camera--view, #camera--sensor, #camera--output{
-    /* back cam */
-    /* transform: scaleX(-1); */
-    
-    /*front cam*/
+/* #camera--view, #camera--sensor, #camera--output{
     -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+}*/
+
+#camera--viewfront, #camera--sensor, #camera--output{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+
+#camera--viewback, #camera--sensor, #camera--output{
     transform: scaleX(-1);
     filter: FlipH;
 }
@@ -80,18 +87,6 @@ html, body{
     left: calc(70% - 100px);
     margin-left: 100px;
 }
-
-/* #camera--gallery{
-    width: 90px;
-    background-color: transparent;
-    font-size: 16px;
-    border: none;
-    padding: 15px 20px;
-    text-align: left;
-    position: fixed;
-    bottom: 30px;
-    left: calc(30% - 100px);
-} */
 
 #save--image{
     width: 90px;
